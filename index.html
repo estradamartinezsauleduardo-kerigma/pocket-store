@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4a261" />
+    <meta name="description" content="Catálogo de comida casera que también funciona sin conexión." />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="./images/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./images/icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>PocketStore</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="PocketStore, inicio">
+        <span class="brand__mark" aria-hidden="true">P</span>
+        <span>PocketStore</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <button class="cart-button" id="cart-button" type="button" aria-label="Abrir carrito">
+          <span aria-hidden="true">🛒</span>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">Sabor que viaja contigo</p>
+          <h1 id="hero-title">Comida casera,<br /><em>siempre disponible.</em></h1>
+          <p>Explora nuestro catálogo incluso cuando no tengas conexión. Fresco, sencillo y listo para llevar.</p>
+          <a class="primary-button" href="#productos">Ver el menú <span aria-hidden="true">→</span></a>
+          <div class="connection-pill" id="connection-status" role="status" aria-live="polite">
+            <span class="status-dot"></span><span>Comprobando conexión…</span>
+          </div>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <span class="shape shape--one"></span>
+          <span class="shape shape--two"></span>
+          <img src="./images/products/soup.webp" alt="" width="512" height="512" />
+        </div>
+      </section>
+
+      <section class="catalog" id="productos" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Hecho con cariño</p>
+            <h2 id="catalog-title">Favoritos de la casa</h2>
+          </div>
+          <p>El contenido se actualiza cuando hay internet y permanece disponible sin conexión.</p>
+        </div>
+
+        <div class="catalog-toolbar" aria-label="Herramientas del catálogo">
+          <label class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <span class="sr-only">Buscar producto</span>
+            <input id="search" type="search" placeholder="Buscar en el menú…" autocomplete="off" />
+          </label>
+          <div class="filters" id="filters" aria-label="Filtrar por categoría"></div>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite" aria-busy="true">
+          <article class="skeleton"></article>
+          <article class="skeleton"></article>
+          <article class="skeleton"></article>
+        </div>
+        <p class="empty-state" id="empty-state" hidden>No encontramos productos con esa búsqueda.</p>
+      </section>
+
+      <section class="about" id="nosotros" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">PocketStore PWA</p>
+          <h2 id="about-title">Tu menú no depende de la señal.</h2>
+        </div>
+        <p>Esta aplicación guarda su estructura y catálogo en tu dispositivo. Después de la primera visita puedes consultarla desde cualquier lugar, aun sin internet.</p>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-title" aria-hidden="true">
+      <div class="cart-panel__header">
+        <div><p class="eyebrow">Tu selección</p><h2 id="cart-title">Carrito</h2></div>
+        <button class="close-button" id="close-cart" type="button" aria-label="Cerrar carrito">×</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-total"><span>Total</span><strong id="cart-total">$0.00</strong></div>
+      <button class="primary-button primary-button--wide" type="button" id="checkout">Preparar pedido</button>
+    </aside>
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer>
+      <a class="brand brand--footer" href="#inicio"><span class="brand__mark">P</span><span>PocketStore</span></a>
+      <p>Catálogo offline · Vanilla JavaScript · <span id="year"></span></p>
+    </footer>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
