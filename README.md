@@ -67,7 +67,3 @@ Después visita `http://localhost:8080`. Para simular el modo offline, carga la 
 - Fetch API
 - Cache API y Service Workers
 - Web App Manifest
-
-## Autor
-
-Proyecto individual académico.
