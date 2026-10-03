@@ -2,6 +2,8 @@
 
 PocketStore es una aplicación web progresiva (PWA) de una sola página creada con HTML, CSS y JavaScript puro. Presenta un catálogo de comida casera, consume contenido desde JSONPlaceholder y conserva una experiencia útil cuando el dispositivo se queda sin conexión.
 
+**Repositorio:** https://github.com/estradamartinezsauleduardo-kerigma/pocket-store
+
 ## Funcionalidades
 
 - App Shell adaptable para celular, tableta y escritorio.
